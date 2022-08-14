@@ -1,85 +1,80 @@
 type: object
 properties:
-  This is the Response for Response Code 001:
+  This is the Response for response code 001:
     type: object
     properties:
-      ReponseCode:
+      ResponseCode:
         type: string
         description: Response Code 001
-      ReponseCodeDesc:
+      ResponseCodeDesc:
         type: string
         description: Successful Transaction
       ResponseTransactionID:
         type: string
         description: Transaction Number
-      TransLog for Payment Response Code 001:
+      TransLog for Payment response code 001:
         type: object
         properties:
-          TransResponseCode:
+          EmailResponseCode:
             type: string
-            description: Transaction response code number
-          TransResponseCodeDesc:
+            description: Response for Payment response code 001
+          EmailResponseCodeDesc:
             type: string
-            description: Clearing House Admin Registered.
-            
-  This is the Response for Response Code 900:
+            description: Email Sent Successfully via SendGrid
+  This is the Response for response code 900:
     type: object
     properties:
-      ReponseCode:
+      ResponseCode:
         type: string
         description: Response Code 900
-      ReponseCodeDesc:
+      ResponseCodeDesc:
         type: string
         description: Transaction Failed
       ResponseTransactionID:
         type: string
         description: Transaction Number
-      TransError for Payment Response Code 900:
+      TransError for Payment response code 900:
         type: object
         properties:
-          ErrorCode:
+          EmailResponseCode:
             type: string
-            description:  Error code number
-          ErrorDesc:
-           type: string
-           description: Error description
-          
-      TransError JSON Validation Failed Code 2016:
-        type: object
-        properties:
-          ErrorCode:
-            type: integer
-            description: "2016"
-          ErrorDesc:
+            description: Response for Payment response code 001
+          EmailResponseCodeDesc:
             type: string
-            description: Invalid or Missing Key
-                
-      TransError JSON Validation Failed Code 1035:
+            description: Email Sent Failed
+      TransError JSON Validation Failed Code 1045:
         type: object
         properties:
           ErrorCode:
             type: integer
-            description: "1035"
+            description: "1045"
           ErrorDesc:
             type: string
-            description: Invalid or Missing UserName
-
-      TransError JSON Validation Failed Code 177:
+            description: Invalid or Missing Sender Email
+      TransError JSON Validation Failed Code 1046:
         type: object
         properties:
           ErrorCode:
             type: integer
-            description: "177"
+            description: "1046"
           ErrorDesc:
             type: string
-            description: Invalid or Missing Phone Number
-
-      TransError JSON Validation Failed Code 2025:
+            description: Invalid or Missing Email To
+      TransError JSON Validation Failed Code 1047:
         type: object
         properties:
           ErrorCode:
             type: integer
-            description: "2025"
+            description: "1047"
           ErrorDesc:
             type: string
-            description: Invalid or Missing Job Title
+            description: Invalid or Missing Subject
+      TransError JSON Validation Failed Code 1048:
+        type: object
+        properties:
+          ErrorCode:
+            type: integer
+            description: "1048"
+          ErrorDesc:
+            type: string
+            description: Invalid or Missing Body
